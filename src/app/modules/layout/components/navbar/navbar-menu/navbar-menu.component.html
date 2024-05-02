@@ -1,0 +1,26 @@
+<div class="flex items-center ">
+  
+  <img class="px-2 mr-2" src="../../../../../../assets/icons/logo-apple.svg" alt="">
+  <div class="dropdown relative inline-block" *ngFor="let menu of pagesMenu$ | async">
+    <!-- Button -->
+    <button
+      [ngClass]="
+        menu.selected || menu.active
+          ? 'bg-primary-500 text-white'
+          : 'text-gray-600 hover:bg-gray-100 hover:text-primary-500 dark:text-night-200 dark:hover:bg-night-600 '
+      "
+      class="mr-2 inline-flex rounded-md px-2 py-2 text-sm font-medium">
+      <span class="text-[12px]">{{ menu.group }}</span>
+      <svg-icon src="" [svgClass]="'h-6 w-6'"> </svg-icon>
+    </button>
+    
+    <!-- Dropdown  -->
+    <div
+      class="dropdown-content absolute top-[100%] min-w-[200px] origin-top-left"
+      navbar-submenu
+      [submenu]="menu.items"></div>
+  </div>
+
+  <img class="px-2 mr-2" src="../../../../../../assets/icons/search.svg" alt="">
+  <img class="px-2 mr-2" src="../../../../../../assets/icons/bottle.svg" alt="">
+</div>

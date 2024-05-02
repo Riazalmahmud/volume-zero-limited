@@ -1,0 +1,145 @@
+<div class="mt-3 items-center bg-gray-200 py-4 dark:bg-night-700">
+  <div class="airticale container mx-auto lg:w-[980px]">
+    <p class="py-2 text-[12px]">
+      1. Trade-in values will vary based on the condition, year, and configuration of your eligible trade-in device. Not
+      all devices are eligible for credit. You must be at least 18 years old to be eligible to trade in for credit or
+      for an Apple Gift Card. Trade-in value may be applied toward qualifying new device purchase, or added to an
+      Apple Gift Card. Actual value awarded is based on receipt of a qualifying device matching the description provided
+      when estimate was made. Sales tax may be assessed on full value of a new device purchase. In-store trade-in
+      requires presentation of a valid photo ID (local law may require saving this information). Offer may not be
+      available in all stores, and may vary between in-store and online trade-in. Some stores may have additional
+      requirements. Apple or its trade-in partners reserve the right to refuse or limit quantity of any trade-in
+      transaction for any reason. More details are available from Apple’s trade-in partner for trade-in and recycling of
+      eligible devices. Restrictions and limitations may apply.
+    </p>
+
+    <p class="py-2 text-[12px]">Available in the U.S. on apple.com, in the Apple Store app, and at Apple Stores.</p>
+    <p class="py-2 text-[12px]">Available in the U.S. on apple.com, in the Apple Store app, and at Apple Stores.</p>
+    <p class="py-2 text-[12px]">
+      To access and use all Apple Card features and products available only to Apple Card users, you must add Apple Card
+      to Wallet on an iPhone or iPad that supports and has the latest version of iOS or iPadOS. Apple Card is subject to
+      credit approval, available only for qualifying applicants in the United States, and issued by Goldman Sachs Bank
+      USA, Salt Lake City Branch.
+    </p>
+    <p class="py-2 text-[12px]">
+      If you reside in the U.S. territories, please call Goldman Sachs at 877-255-5923 with questions about Apple Card.
+    </p>
+    <p class="py-2 text-[12px]">
+      Learn more about how Apple Card applications are evaluated at support.apple.com/kb/HT209218.
+    </p>
+    <p class="py-2 text-[12px]">A subscription is required for Apple TV+.</p>
+    <p class="py-2 text-[12px]">A subscription is required for Apple Arcade, Apple Fitness+, and Apple Music.</p>
+
+    <hr class="my-8 h-0.5 bg-[#F5F5F7]" />
+
+    <div class="grid grid-cols-10">
+      <div class="col-span-5 lg:col-span-2">
+        <p class="text-[12px] font-bold text-black">Shop and Learn</p>
+        <ol>
+          <li class="pt-2 text-[12px]" *ngFor="let menu of menuList">
+            <a href="#">{{ menu.name }}</a>
+          </li>
+        </ol>
+
+        <p class="py-4 text-[12px] font-bold text-black">Apple Wallet</p>
+        <ol>
+          <li class="pt-2 text-[12px]" *ngFor="let menu of menu2">
+            <a href="#">{{ menu.name }}</a>
+          </li>
+        </ol>
+      </div>
+      <div class="col-span-5 lg:col-span-2">
+        <p class="text-[12px] font-bold text-black">Account</p>
+        <ol>
+          <li class="pt-2 text-[12px]" *ngFor="let menu of menu3">
+            <a href="#">{{ menu.name }}</a>
+          </li>
+        </ol>
+
+        <p class="py-4 text-[12px] font-bold text-black">Entertainment</p>
+        <ol>
+          <li class="pt-2 text-[12px]" *ngFor="let menu of menu4">
+            <a href="#">{{ menu.name }}</a>
+          </li>
+        </ol>
+      </div>
+      <div class="col-span-5 lg:col-span-2">
+        <p class="text-[12px] font-bold text-black">Apple Store</p>
+        <ol>
+          <li class="pt-2 text-[12px]" *ngFor="let menu of menu5">
+            <a href="#">{{ menu.name }}</a>
+          </li>
+        </ol>
+      </div>
+      <div class="col-span-5 lg:col-span-2">
+        <p class="text-[12px] font-bold text-black">For Business</p>
+        <ol>
+          <li class="pt-2 text-[12px]" *ngFor="let menu of menu6">
+            <a href="#">{{ menu.name }}</a>
+          </li>
+        </ol>
+
+        <p class="py-4 text-[12px] font-bold text-black">Entertainment</p>
+        <ol>
+          <li class="pt-2 text-[12px]" *ngFor="let menu of menu6[2].forEducation">
+            <a href="#">{{ menu.name }}</a>
+          </li>
+        </ol>
+        <p class="py-4 text-[12px] font-bold text-black">For Healthcare</p>
+        <ol>
+          <li class="pt-2 text-[12px]" *ngFor="let menu of menu6[3].forHealthcare">
+            <a href="#">{{ menu.name }}</a>
+          </li>
+        </ol>
+        <p class="py-4 text-[12px] font-bold text-black">For Government</p>
+        <ol>
+          <li class="pt-2 text-[12px]" *ngFor="let menu of menu6[4].forGovernment">
+            <a href="#">{{ menu.name }}</a>
+          </li>
+        </ol>
+      </div>
+      <div class="col-span-5 lg:col-span-2">
+        <p class="text-[12px] font-bold text-black">Apple ValuesMenu</p>
+        <ol>
+          <li class="pt-2 text-[12px]" *ngFor="let menu of appleValuesMenu">
+            <a href="#">{{ menu.name }}</a>
+          </li>
+        </ol>
+
+        <p class="py-4 text-[12px] font-bold text-black">About Apple</p>
+        <ol>
+          <li class="pt-2 text-[12px]" *ngFor="let menu of appleValuesMenu[7].aboutApple">
+            <a href="#">{{ menu.name }}</a>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto lg:w-[980px]">
+ 
+    <div class="py-3">
+      <p class="text-[12px] pt-2">
+        More ways to shop: <span class="text-blue-600">Find an Apple Store</span> or
+        <span class="text-blue-600"> other retaile</span> near you. Or call 1-800-MY-APPLE.
+      </p>
+      <hr class="my-6 h-0.5 bg-[#F5F5F7]" />
+      <div class="flex justify-between">
+        <div class="flex gap-8">
+          <div>
+            <p class="text-[12px]">Copyright © 2024 Apple Inc. All rights reserved</p>
+          </div>
+          <ul class="flex gap-2">
+            <li class="text-[12px]">Privacy Policy |</li>
+            <li class="text-[12px]">Terms of Use |</li>
+            <li class="text-[12px]">Sales and Refunds |</li>
+            <li class="text-[12px]">Legal |</li>
+            <li class="text-[12px]">Site Map</li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-[12px]">United States</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
