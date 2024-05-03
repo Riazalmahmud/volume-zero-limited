@@ -2,7 +2,7 @@
 ## created by : Riaz al mahmud 
 ## contact : riazhossen043@gmail.com
 ## mobile : +8801571231724
-## backend:  nodejs, express, mongoose
+## front end :  angular , tailwind css , angular material , and other  npm packages
 ## Technologies :  nodejs, express, mongoose
 
 
