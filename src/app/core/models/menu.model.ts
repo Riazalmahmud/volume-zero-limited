@@ -3,12 +3,14 @@ export interface MenuItem {
   separator?: boolean;
   selected?: boolean;
   active?: boolean;
+  route?: string;
   items: Array<SubMenuItem>;
 
 
 }
 
 export interface SubMenuItem {
+
   icon?: string;
   label?: string;
   route?: string | null;

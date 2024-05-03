@@ -1,9 +1,9 @@
 <div class="flex items-center ">
   
-  <img class="px-2 mr-2" src="../../../../../../assets/icons/logo-apple.svg" alt="">
-  <div class="dropdown relative inline-block" *ngFor="let menu of pagesMenu$ | async">
+  <img class="px-2 mr-2 cursor-pointer" [routerLink]="['/']" src="../../../../../../assets/icons/logo-apple.svg" alt="">
+  <div class="dropdown relative inline-block cursor-pointer" *ngFor="let menu of pagesMenu$ | async" routerLink="/{{menu.route}}">
     <!-- Button -->
-    <button
+    <button routerLink="/{{menu.route}}"
       [ngClass]="
         menu.selected || menu.active
           ? 'bg-primary-500 text-white'
@@ -16,6 +16,7 @@
     
     <!-- Dropdown  -->
     <div
+    routerLink="/{{menu.route}}"
       class="dropdown-content absolute top-[100%] min-w-[200px] origin-top-left"
       navbar-submenu
       [submenu]="menu.items"></div>
@@ -23,4 +24,6 @@
 
   <img class="px-2 mr-2" src="../../../../../../assets/icons/search.svg" alt="">
   <img class="px-2 mr-2" src="../../../../../../assets/icons/bottle.svg" alt="">
+
+  <button routerLink="/dashboard">Dashboard</button>
 </div>

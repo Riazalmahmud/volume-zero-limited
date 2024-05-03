@@ -5,35 +5,29 @@ export class Menu {
     {
       group: 'Store',
       separator: false,
+      route: '/dashboard',
       items: [
         {
           icon: 'assets/icons/outline/chart-pie.svg',
-          label: 'Dashboard',
+          label: 'Blog',
           route: '/dashboard',
-          children: [{ label: 'Nfts', route: '/dashboard/nfts' }],
+          children: [{ label: 'blog', route: '/dashboard' }],
+          
         },
-        {
-          icon: 'assets/icons/outline/lock-closed.svg',
-          label: 'Auth',
-          route: '/auth',
-          children: [
-            { label: 'Sign up', route: '/auth/sign-up' },
-            { label: 'Sign in', route: '/auth/sign-in' },
-            { label: 'Forgot Password', route: '/auth/forgot-password' },
-            { label: 'New Password', route: '/auth/new-password' },
-            { label: 'Two Steps', route: '/auth/two-steps' },
-          ],
-        },
+       
       ],
     },
     {
       group: 'Mac',
       separator: true,
+      route: '/dashboard',
       items: []
+      
     },
     {
       group: 'iphone',
       separator: false,
+      route: '/dashboard',
       items: [
        
       ],
@@ -41,6 +35,7 @@ export class Menu {
     {
       group: 'watch',
       separator: false,
+      route: '/dashboard',
       items: [
        
       ],
@@ -48,6 +43,7 @@ export class Menu {
     {
       group: 'vision',
       separator: false,
+      route: '/dashboard',
       items: [
         
       ],
@@ -55,6 +51,7 @@ export class Menu {
     {
       group: 'AirPods',
       separator: false,
+      route: '/dashboard',
       items: [
         
       ],
@@ -62,6 +59,7 @@ export class Menu {
     {
       group: 'TV & Home',
       separator: false,
+      route: '/dashboard',
       items: [
         
       ],
@@ -69,6 +67,7 @@ export class Menu {
     {
       group: 'entertainment',
       separator: false,
+      route: '/dashboard',
       items: [
         
       ],
@@ -76,6 +75,7 @@ export class Menu {
     {
       group: 'Accessories',
       separator: false,
+      route: '/dashboard',
       items: [
         
       ],
@@ -83,6 +83,7 @@ export class Menu {
     {
       group: 'Accessories',
       separator: false,
+      route: '/dashboard',
       items: [
         
       ],
@@ -90,6 +91,7 @@ export class Menu {
     {
       group: 'Support',
       separator: false,
+      route: '/dashboard',
       items: [
        
       ],

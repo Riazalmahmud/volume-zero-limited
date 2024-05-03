@@ -9,74 +9,93 @@ import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { NewsDialogComponent } from 'src/app/shared/components/news-dialog/news-dialog.component';
+import { NewsInterface } from 'src/app/core/models/news.model';
+import { ToastrService } from 'ngx-toastr';
+
 
 export interface UserData {
-  id: string;
-  name: string;
-  progress: string;
-  fruit: string;
+	postAuthName: string;
+	authImageURL: string;
+	postImage: string;
+	description: string;
+	title: string;
+	action: string;
 }
 
-/** Constants used to fill up our data base. */
-const FRUITS: string[] = [
-  'blueberry',
-  'lychee',
-  'kiwi',
-  'mango',
-  'peach',
-  'lime',
-  'pomegranate',
-  'pineapple',
-];
-const NAMES: string[] = [
-  'Maia',
-  'Asher',
-  'Olivia',
-  'Atticus',
-  'Amelia',
-  'Jack',
-  'Charlotte',
-  'Theodore',
-  'Isla',
-  'Oliver',
-  'Isabella',
-  'Jasper',
-  'Cora',
-  'Levi',
-  'Violet',
-  'Arthur',
-  'Mia',
-  'Thomas',
-  'Elizabeth',
-];
+
 @Component({
   selector: 'app-news-post',
   templateUrl: './news-post.component.html',
   styleUrls: ['./news-post.component.scss']
 })
 export class NewsPostComponent {
-  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
-  dataSource: MatTableDataSource<UserData>;
+  displayedColumns: string[] = [ 'postAuthName', 'authImageURL', 'postImage', 'description', 'title', 'action'];
+  dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort
  
-  constructor(private fb : FormBuilder, private newService: NewsService,  private router: Router, private dialog: MatDialog) {
-    const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
+  constructor(private fb : FormBuilder, private newService: NewsService,  private router: Router, private dialog: MatDialog, private toster : ToastrService) {
 
-    // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users);
+
+
+  
 }
   ngOnInit(): void {
-
+this.getAllNews()
 
   }
 
+  editData(data: NewsInterface) {
+    const dialog = this.dialog.open(NewsDialogComponent, {
+  width: '500px',
+      data: {
+    type: 2,
+    data: data,
+  }
+    })
+    dialog.afterClosed().subscribe(res => {
+      if (res === 'success') {
+        this.getAllNews()
+      }
+    })
+  }
+
+  deleteNews(id: string) {
+    this.newService.deleteNews(id).subscribe({
+      next: (res) => {
+        this.toster.success('success', res.message)
+        this.getAllNews()
+      },
+      error: (err) => {
+  
+        this.toster.error('success', err.message)
+
+      },
+    });
+  }
+  getAllNews() {
+    this.newService.getNews().subscribe({
+      next: (res) => {
+        this.dataSource = res.data
+
+       }
+  })
+}
   addNews() {
   const dialog  =   this.dialog.open(NewsDialogComponent, {
       width: '500px',
+    data: {
+      type: 1,
+      },
 
-    })
+  })
+    
+  dialog.afterClosed().subscribe(res => {
+    if (res === 'success') {
+      this.getAllNews()
+    }
+  })
   }
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -94,18 +113,3 @@ export class NewsPostComponent {
  
 }
 
-/** Builds and returns a new User. */
-function createNewUser(id: number): UserData {
-  const name =
-    NAMES[Math.round(Math.random() * (NAMES.length - 1))] +
-    ' ' +
-    NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) +
-    '.';
-
-  return {
-    id: id.toString(),
-    name: name,
-    progress: Math.round(Math.random() * 100).toString(),
-    fruit: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))],
-  };
-}

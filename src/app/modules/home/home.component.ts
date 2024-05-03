@@ -3,13 +3,14 @@ import { MenuService } from '../layout/services/menu.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { NewsService } from 'src/app/core/services/news.service';
 import { NewsInterface } from 'src/app/core/models/news.model';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewInit {
-  newsList : NewsInterface[]=[]
+  newsList!: NewsInterface
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -42,6 +43,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
       }
     },
 
+  }
+
+  learnmor() {
+    alert('learn more page not configured, stay home page or dashboard')
+    this.router.navigate(['/'])
   }
   header: OwlOptions = {
 
@@ -104,7 +110,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       }
     },
   }
-  constructor(private menuService: MenuService, private newsService: NewsService) {}
+  constructor(private menuService: MenuService, private newsService: NewsService, private router: Router) {}
  
   ngOnInit(): void {
 this.getAllNews()
@@ -116,7 +122,7 @@ this.getAllNews()
   getAllNews() {
     this.newsService.getNews().subscribe(res => {
       this.newsList = res.data[res.data.length - 1];
-      console.log(this.newsList)
+  
     })
   }
   public toggleMobileMenu(): void {

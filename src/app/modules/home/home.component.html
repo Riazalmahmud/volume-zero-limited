@@ -1,5 +1,5 @@
 <div class="bg-white">
-  <div class="container relative mx-auto mb-4 h-[44px] bg-white dark:bg-night-700 lg:w-[996px]">
+  <div class="container relative mx-auto mb-4 h-[44px] bg-white dark:bg-night-700 lg:w-[1080px]">
     <div class="mx-auto px-5">
       <div class="flex items-center justify-between py-3.5 md:justify-start">
         <!-- Mobile Navigation Menu Button-->
@@ -39,7 +39,7 @@
   </div>
 
   <div class="h-[44px] bg-[#1D1D1F]">
-    <div class="container mx-auto flex h-[44px] items-center justify-center dark:bg-night-700 lg:w-[996px]">
+    <div class="container mx-auto flex h-[44px] items-center justify-center dark:bg-night-700 lg:w-[1080px]">
       <p class="text-center text-[14px] text-[#F5F5F7]">
         Join us this Earth Day by recycling your Apple devices .
         <span class="ml-8 text-[#2997FF]">Recycle for free > </span>
@@ -48,29 +48,29 @@
   </div>
   <!-- herro section  -->
   <div class="hero-section">
-    <div class="container mx-auto lg:w-[996px]">
+    <div class="container mx-auto lg:w-[1080px]">
       <div class="mx-auto flex justify-center">
-        <div class="lg:pt-[24px] mx-auto content-center">
+        <div class="lg:pt-[24px] mx-auto content-center" >
           <div class="flex items-center justify-center gap-4 my-4">
-            <p class="text-center text-[56px] font-bold text-[#1D1D1F]">Apple 2030</p>
+            <p class="text-center text-[56px] font-bold text-[#1D1D1F]">{{newsList?.postAuthName}}</p>
             <div class="flex h-12 w-12 items-center rounded-full bg-white p-2 text-center shadow-2xl">
-              <img class="h-8 w-8 rounded" src="../../../assets/images/pic.jpg" alt="" />
+              <img class="h-8 w-8 rounded" src="{{newsList?.authImageURL}}" alt="" />
             </div>
           </div>
-          <p class="text-center text-[32px]">A plan as innovative as our products.</p>
+          <p class="text-center text-[32px]">{{newsList?.title}}</p>
         <div class="flex justify-center mt-4">
 
-          <button class="bg-[#0071E3] py-2 content-center px-5 rounded-full text-white text-center text-[17px]"> Learn more</button>
+          <button class="bg-[#0071E3] py-2 content-center px-5 cursor-pointer rounded-full text-white text-center text-[17px]" (click)="learnmor()"> Learn more</button>
         </div>
         </div>
       </div>
     </div>
   </div>
   <div class="hero-section-2">
-    <div class="container mx-auto lg:w-[996px]">
+    <div class="container mx-auto lg:w-[1080px]">
       <div class="mx-auto flex justify-center">
         <div class="lg:pt-[56px] mx-auto content-center">
-          <p class="text-center text-[56px] font-bold text-white">iPhone 15 Pro</p>
+          <p class="text-center text-[56px] font-bold text-white pb-4">iPhone 15 Pro</p>
           <p class="text-center text-[32px] text-white">Titanium. So strong. So light. So Pro.</p>
         <div class="flex justify-center mt-4 gap-8">
 
@@ -82,10 +82,10 @@
     </div>
   </div>
   <div class="hero-section-3">
-    <div class="container mx-auto lg:w-[996px]">
+    <div class="container mx-auto lg:w-[1080px]">
       <div class="mx-auto flex justify-center">
         <div class="lg:pt-[56px] mx-auto content-center">
-          <p class="text-center text-[56px] font-bold text-black">iPhone 15</p>
+          <p class="text-center text-[56px] font-bold text-black pb-4">iPhone 15</p>
           <p class="text-center text-[32px] text-black">New camera. New design. Newphoria.</p>
         <div class="flex justify-center mt-4 gap-8">
 
@@ -141,7 +141,7 @@
       <div class="hero-section-4 " style="background: url('../../../assets/bg/post3.jpeg');">
         <div class="mx-auto flex justify-center ">
           <div class="lg:pt-[56px] mx-auto content-center">
-            <p class="text-center text-[56px] font-bold text-black">MacBook Air</p>
+            <p class="text-center text-[56px] font-bold text-black pb-4">MacBook Air</p>
             <p class="text-center text-[19px] text-black">Lean. Mean. M3 machine.</p>
           <div class="flex justify-center mt-4 gap-8">
   
@@ -159,7 +159,7 @@
           <div class="mx-auto flex justify-center">
             <div class="lg:pt-[56px] mx-auto content-center">
               <img class="text-center mx-auto" src="../../../assets/bg/apple-watch.png" alt="">
-              <p class="text-center text-[56px] font-bold text-white">iPhone 15</p>
+              <p class="text-center text-[56px] font-bold text-white py-4">iPhone 15</p>
               <p class="text-center text-[19px] text-white">Smarter. Brighter. Mightier.</p>
             <div class="flex justify-center mt-4 gap-8">
     
@@ -177,7 +177,7 @@
         <div class="mx-auto flex justify-center ">
           <div class="lg:pt-[56px] mx-auto content-center">
             <img class="text-center mx-auto" src="../../../assets/bg/apple-watch-2.png" alt="">
-            <p class="text-center text-[56px] font-bold text-black">MacBook Air</p>
+            <p class="text-center text-[56px] font-bold text-black py-4">MacBook Air</p>
             <p class="text-center text-[19px] text-black">Get up to 3% Daily Cash back  <br>
               with every purchase.
              
@@ -233,7 +233,7 @@
   <ng-template carouselSlide>
     <div class="  " >
       <img class="relative" style='width: 417px; height: 236px' src="../../../assets/bg/carosel-sm-1.jpeg" alt="">
-  <div class="px-4 flex justify-between  absolute left-0 right-0 bottom-3 ">
+  <div class="px-4 flex justify-between  absolute left-0 right-0 bottom-3 py-4 ">
 <p class="text-white">Run Your First 10K</p>
 <img style='width: 68px; height: 14px' src="../../../assets/icons/b1.png" alt="">
   </div>
@@ -243,7 +243,7 @@
   <ng-template carouselSlide>
     <div class="  " >
       <img class="relative" style='width: 417px; height: 236px' src="../../../assets/bg/carosel-sm-2.jpeg" alt="">
-  <div class="px-4 flex justify-between  absolute left-0 right-0 bottom-3 ">
+  <div class="px-4 flex justify-between  absolute left-0 right-0 bottom-3 py-4 ">
 <p class="text-white">Run Your First 10K</p>
 <img style='width: 68px; height: 14px' src="../../../assets/icons/b1.png" alt="">
   </div>
@@ -253,7 +253,7 @@
   <ng-template carouselSlide>
     <div class="  " >
       <img class="relative" style='width: 417px; height: 236px' src="../../../assets/bg/carosel-sm-3.jpeg" alt="">
-  <div class="px-4 flex justify-between  absolute left-0 right-0 bottom-3 ">
+  <div class="px-4 flex justify-between  absolute left-0 right-0 bottom-3 py-4">
 <p class="text-white">Run Your First 10K</p>
 <img style='width: 68px; height: 14px' src="../../../assets/icons/b1.png" alt="">
   </div>
@@ -262,7 +262,7 @@
   <ng-template carouselSlide>
     <div class="  " >
       <img class="relative" style='width: 417px; height: 236px' src="../../../assets/bg/carosel-sm-4.jpeg" alt="">
-  <div class="px-4 flex justify-between  absolute left-0 right-0 bottom-3 ">
+  <div class="px-4 flex justify-between  absolute left-0 right-0 bottom-3 py-4">
 <p class="text-white">Run Your First 10K</p>
 <img style='width: 68px; height: 14px' src="../../../assets/icons/b1.png" alt="">
   </div>
@@ -271,7 +271,7 @@
   <ng-template carouselSlide>
     <div class="  " >
       <img class="relative" style='width: 417px; height: 236px' src="../../../assets/bg/carosel-sm-5.jpeg" alt="">
-  <div class="px-4 flex justify-between  absolute left-0 right-0 bottom-3 ">
+  <div class="px-4 flex justify-between  absolute left-0 right-0 bottom-3 py-4">
 <p  class="text-white">Run Your First 10K</p>
 <img style='width: 68px; height: 14px' src="../../../assets/icons/b1.png" alt="">
   </div>

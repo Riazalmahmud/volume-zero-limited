@@ -6,9 +6,10 @@ import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, SharedModule, HttpClientModule, BrowserAnimationsModule, RouterModule],
+  imports: [BrowserModule, AppRoutingModule, SharedModule, HttpClientModule, BrowserAnimationsModule, RouterModule,ToastrModule.forRoot()],
 
 providers: [],
   bootstrap: [AppComponent],

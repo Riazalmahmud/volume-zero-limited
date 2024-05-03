@@ -4,7 +4,7 @@
   <div class="px-4">
     <!-- Logo -->
     <div class="relative h-10">
-      <div class="flex items-center" *ngIf="showSideBar$ | async">
+      <div class="flex items-center cursor-pointer" *ngIf="showSideBar$ | async" routerLink="/">
         <a class="flex items-center justify-center rounded bg-primary-500 p-2 focus:outline-none focus:ring-1">
           <svg-icon src="assets/icons/logo.svg"> </svg-icon>
         </a>
